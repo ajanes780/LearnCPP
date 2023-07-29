@@ -6,17 +6,11 @@
 using namespace std;
 
 int main() {
+    int x = 30;
+    int y = 3;
 
-    string names[2];
-
-    cout << "what is your name ?";
-    getline(cin, names[0]);
-
-    cout << "what is your name ?";
-    getline(cin, names[1]);
-
-    cout << names[0] << " " << names[1] << endl;
-
+    double z = static_cast<double >(x) / y;
+    cout << z;
     return 0;
 }
 
