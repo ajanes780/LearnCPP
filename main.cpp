@@ -3,38 +3,38 @@
 
 using namespace std;
 
-void swap(int arr[], int x, int j) {
-    int temp;
-    temp = arr[x];
-    arr[x] = arr[j];
-    arr[j] = temp;
-
-}
-
-void sort(int numbers[], int size) {
-
-    for (int pass = 0; pass < size; pass++) {
-        for (int i = 1; i < size; i++) {
-            if (numbers[i - 1] > numbers[i]) {
-                swap(numbers, i - 1, i);
-            }
-        }
-
-    }
-}
-
 
 int main() {
+    int capactiy = 5;
+    int *numbers = new int[capactiy];
+    int entries = 0;
 
-    int temp;
-    int arr[] = {20, 34, 12, 45, 821, 9, 3, 10};
-    int i;
+    while (true) {
+        cout << "Number: ";
+        cin >> numbers[entries];
+        if (cin.fail()) break;
+        entries++;
+        if (entries == capactiy) {
 
+            // create a temp array (twice the size )
+            int *temp = new int[capactiy * 2];
 
-    sort(arr, size(arr));
+            // copy all the elements
+            for (int i = 0; i < entries - 1; i++) {
+                temp[i] = numbers[i];
+            }
+            delete[] numbers;
+            numbers = temp;
 
-    for (int num: arr) {
-        cout << num << endl;
+            // Have the numbers pointer point to the new array
+
+        }
     }
+
+    for (int i = 0; i < entries; i++) {
+        cout << numbers[i] << endl;
+    }
+
+    delete[] numbers;
     return 0;
 }
