@@ -5,36 +5,18 @@ using namespace std;
 
 
 int main() {
-    int capactiy = 5;
-    int *numbers = new int[capactiy];
-    int entries = 0;
 
-    while (true) {
-        cout << "Number: ";
-        cin >> numbers[entries];
-        if (cin.fail()) break;
-        entries++;
-        if (entries == capactiy) {
 
-            // create a temp array (twice the size )
-            int *temp = new int[capactiy * 2];
+    string name = "Aaron Janes";
+    string name2 = "John Janes";
 
-            // copy all the elements
-            for (int i = 0; i < entries - 1; i++) {
-                temp[i] = numbers[i];
-            }
-            delete[] numbers;
-            numbers = temp;
+    cout << boolalpha << name.starts_with("A") << "\n";
+    cout << boolalpha << name.ends_with("A") << "\n";
+    cout << name.back() << "\n";
+    cout << name.front() << "\n";
 
-            // Have the numbers pointer point to the new array
+    cout << name.size() << endl;
 
-        }
-    }
 
-    for (int i = 0; i < entries; i++) {
-        cout << numbers[i] << endl;
-    }
-
-    delete[] numbers;
     return 0;
 }
