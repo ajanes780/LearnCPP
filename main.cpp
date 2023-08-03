@@ -3,10 +3,21 @@
 
 using namespace std;
 
+struct Birthday {
+    short year = 1990;
+    short day = 01;
+    string month = "january";
+
+    void tostring() {
+        cout << "customer DOB : " << month << day << year << endl;
+    }
+};
+
 struct Customer {
     int id{};
     string name;
     string email;
+    Birthday DOB;
 };
 
 int main() {
@@ -26,6 +37,7 @@ int main() {
 
     for (const auto &c: customers) {
         cout << c.name << endl;
+        cout << c.DOB.day << endl;
     }
 
 
