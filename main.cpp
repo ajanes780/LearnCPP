@@ -30,17 +30,22 @@ int main() {
 
 //    cout << "cust id " << customer.id << endl;
 
+    Customer Bob{
+            232,
+            "Bob",
+            "bobby@hotmail.com",
+            {1981, 27, "April"}
+    };
     vector<Customer> customers;
     customers.push_back(customer);
     customers.push_back(cust1);
     customers.push_back({104, "Frank", "frank@xzt.com"});
+    customers.push_back(Bob);
 
     for (const auto &c: customers) {
         cout << c.name << endl;
         cout << c.DOB.day << endl;
     }
-
-
 
 
     return 0;
