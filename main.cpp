@@ -8,8 +8,8 @@ struct Birthday {
     short day = 01;
     string month = "january";
 
-    void tostring() {
-        cout << "customer DOB : " << month << day << year << endl;
+    [[nodiscard]] string printBirthday() const {
+        return "Customer DOB : " + month + " " + to_string(day) + " " + to_string(year);
     }
 };
 
@@ -28,7 +28,6 @@ int main() {
 
     Customer cust1 = {33, "roger", "roger@gmail.com"};
 
-//    cout << "cust id " << customer.id << endl;
 
     Customer Bob{
             232,
@@ -36,6 +35,8 @@ int main() {
             "bobby@hotmail.com",
             {1981, 27, "April"}
     };
+    cout << Bob.DOB.printBirthday() << endl;
+
     vector<Customer> customers;
     customers.push_back(customer);
     customers.push_back(cust1);
@@ -43,8 +44,8 @@ int main() {
     customers.push_back(Bob);
 
     for (const auto &c: customers) {
-        cout << c.name << endl;
-        cout << c.DOB.day << endl;
+        cout << "customer name: " << c.name << " " << c.DOB.printBirthday() << endl;
+
     }
 
 
