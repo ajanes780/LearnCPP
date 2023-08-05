@@ -1,11 +1,16 @@
+#include "Rectangle.h"
 #include <iostream>
-#include <fstream>
 
 using namespace std;
 
 
 int main() {
-    ifstream file;
-    file.open()
+    Rectangle rectangle;
+
+    rectangle.height = 10;
+    rectangle.width = 20;
+    cout << rectangle.getArea() << endl;
+
+
     return 0;
 }
